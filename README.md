@@ -21,5 +21,5 @@ Currently, two official plugins are available:
 
 #### how to push new code changes to git hub 
 
-![alt text](./readmeImages/image-4.png)
+![alt text](./readmeImages/image-5.png)
 
