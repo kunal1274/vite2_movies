@@ -9,16 +9,17 @@ Currently, two official plugins are available:
 
 ### How to push the code to git hub repository through CLI only 
 
-![alt text](image.png)
+![alt text](./readmeImages/image.png)
 
-![alt text](image-1.png)
+![alt text](./readmeImages/image-1.png)
 
-![alt text](image-2.png)
+![alt text](./readmeImages/image-2.png)
 
 #### How to create the personal tokens in github 
 
-![alt text](image-3.png)
+![alt text](./readmeImages/image-3.png)
 
 #### how to push new code changes to git hub 
 
-![alt text](image-4.png)
+![alt text](./readmeImages/image-4.png)
+
