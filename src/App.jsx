@@ -14,26 +14,38 @@ function App() {
   
 
   return (
-    <>
+   
     
-    <div className="ml-40">
-    <Provider store={reduxStore}>
-      
-        <NavbarComponent/>
-        <Routes>
-          <Route path="/adaptablecounter" element={<AdaptableCounterComponent/>}/>
-          <Route path="/entertext" element={<EnterTextComponent/>}/>
-          <Route path="/counter" element={<CounterWithReduxComponent/>}/>
-          <Route path="/" element={<AttributesContext/>}/>
-          <Route path="/home" element={<HomePage/>}/>
-          <Route path="/watchlist" element={<WatchlistPage/>}/>
-        </Routes>
+    
+      <Provider store={reduxStore}>
+        <div className="flex flex-col justify-center items-center">
+          
+          
+          <NavbarComponent/>
+        
+          
+         
+          
+          <Routes>
+            {/* <Route path="/adaptablecounter" element={<AdaptableCounterComponent/>}/> */}
+            {/* <Route path="/entertext" element={<EnterTextComponent/>}/> */}
+            {/* <Route path="/counter" element={<CounterWithReduxComponent/>}/> */}
+            {/* <Route path="/" element={<AttributesContext/>}/> */}
+            <Route path="/" element={<HomePage/>}/>
+            <Route path="/home" element={<HomePage/>}/>
+            <Route path="/watchlist" element={<WatchlistPage/>}/>
+          </Routes>
+
+          
+          
+          </div>
         </Provider>
+
       
-    </div>
     
     
-    </>
+    
+   
   )
 }
 
