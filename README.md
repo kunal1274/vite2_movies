@@ -23,3 +23,8 @@ Currently, two official plugins are available:
 
 ![alt text](./readmeImages/image-5.png)
 
+#### how to create new branch direclty from the terminal 
+![alt text](image.png)
+
+![alt text](image-1.png)
+
