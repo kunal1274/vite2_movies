@@ -1,11 +1,17 @@
 import { Link } from "react-router-dom";
+import logo from "../../assets/images/movie.jpeg"
 
 function NavbarComponent(){
     return(
-        <div className="flex justify-start mt-20 mb-10 space-x-7 text-4xl font-bold text-blue-800">
-            <Link to="/">Logo</Link>
+        <div className="flex justify-start items-center mt-20 mb-10 space-x-7 text-4xl font-bold text-blue-800">
+            <Link to="/">
+                <img src={logo} className="w-[50px] h-[60px]" alt="movie_logo"/>
+            </Link>
             <Link to="/">Movies</Link>
             <Link to="/watchlist">Watchlist</Link>
+            <Link className="text-xl text-blue-600 font-normal" to="/adaptablecounter">Dynamic Redux Counter</Link>
+            <Link className="text-xl text-blue-600 font-normal" to="/counter">Static Redux Counter</Link>
+            <Link className="text-xl text-blue-600 font-normal" to="/entertext">Redux Texting</Link>
         </div>
     );
 
