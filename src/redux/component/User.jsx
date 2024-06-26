@@ -12,7 +12,8 @@ const User =() =>{
     console.log(localUserSliceState);
     useEffect(()=>{
         //axiosGetUser();
-        dispatch(userSliceActions.getUserDetails());
+        console.log("inside useEffect , dispatching the action for getting user details")
+        dispatch(userSliceActions.getUserDetails(1));
 
     },[])
     return (
