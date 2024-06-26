@@ -1,9 +1,12 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import MovieCard from "./MovieCard";
+import PaginationComponent from "../pagination/Pagination";
+import { movieContext } from "../../context/example/MovieContext";
 const baseURL = 'https://api.themoviedb.org/3/trending/all/day';
 const apiKey = '759a44a0504a2d2f81971272a953a08d';
 const finalUrl = `${baseURL}?api_key=${apiKey}&language=en-US&page=1`
+const finalWithoutPageNoUrl = `${baseURL}?api_key=${apiKey}&language=en-US`
 const baseImageUrl = "https://image.tmdb.org/t/p/w500";
 
 
@@ -11,12 +14,16 @@ function Movies(){
     const [movies,setMovies] = useState([]);
     const [loading,setLoading] = useState(true);
     const [error,setError] = useState(null);
+    // const [pageNumber,setPageNumber] = useState(1);
+    const contextValue = useContext(movieContext);
+    // console.log(contextValue)
 
    useEffect(()=>{
     const fetchMovies = async () => {
         try {
-            const response = await axios.get(finalUrl);
-            console.log(response.data.results);
+            // const response = await axios.get(`${baseURL}?api_key=${apiKey}&language=en-US&page=${pageNumber}`);
+            const response = await axios.get(`${baseURL}?api_key=${apiKey}&language=en-US&page=${contextValue.propPageNo}`);
+            // console.log(response.data.results);
             setMovies(response.data.results);
         } catch (error) {
             console.log(error);
@@ -30,24 +37,21 @@ function Movies(){
     }
 
     fetchMovies();
-    /*
-    axios.get(finalUrl)
-    .then((res)=>{
-        console.log("new axios",res.data.results);
-        setMovies(res.data.results);
-        setLoading(false);
 
-    })
-    .catch((error)=>{
-        console.log(error);
-        setError(true);
-        setLoading(false);
-    }
-    )
-    */
+   },[contextValue.propPageNo])
 
+//    function handleOnNextClick(){
+//     // console.log("Next")
+//     setPageNumber(pageNumber+1)
+//     }
 
-   },[])
+//     function handleOnPrevClick(){
+//         // console.log("Previous")
+//         if(pageNumber ===1){
+//             return;
+//         }
+//         setPageNumber(pageNumber-1);
+//     }
 
     if (loading){
         return(
@@ -76,8 +80,10 @@ function Movies(){
         >
             <div 
                 style={{
-                    marginTop:"10px"
+                    marginTop:"10px",
+                    
                 }}
+                className="font-bold text-2xl"
             >Trending Movies</div>
             
             <div className=""
@@ -85,7 +91,9 @@ function Movies(){
                     display:"flex",
                     flexDirection:"row",
                     flexWrap:"wrap",
-                    justifyContent:"center",
+                    justifyContent:"space-evenly",
+                    
+                    
                 }}
             
             >
@@ -93,7 +101,7 @@ function Movies(){
                 movies.map((movie)=>{
                     return(
                         
-                        <div className="p-5" key={movie.id}>
+                        <div className="px-1 py-2" key={movie.id}>
                            <MovieCard movieObj={movie}/>
                         </div>
                     
@@ -101,6 +109,7 @@ function Movies(){
                 })
             }
             </div>
+            {/* <PaginationComponent onNextClick={handleOnNextClick} onPrevClick={handleOnPrevClick} pageNo={pageNumber}/> */}
         </div>
     );
 }
