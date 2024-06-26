@@ -9,9 +9,11 @@ function NavbarComponent(){
             </Link>
             <Link to="/">Movies</Link>
             <Link to="/watchlist">Watchlist</Link>
-            <Link className="text-xl text-blue-600 font-normal" to="/adaptablecounter">Dynamic Redux Counter</Link>
+            {/* <Link className="text-xl text-blue-600 font-normal" to="/adaptablecounter">Dynamic Redux Counter</Link>
             <Link className="text-xl text-blue-600 font-normal" to="/counter">Static Redux Counter</Link>
-            <Link className="text-xl text-blue-600 font-normal" to="/entertext">Redux Texting</Link>
+            <Link className="text-xl text-blue-600 font-normal" to="/entertext">Redux Texting</Link> */}
+            <Link className="text-lg text-blue-600 font-normal" to="/todo">To Do</Link>
+            <Link className="text-lg text-blue-600 font-normal" to="/user">Users</Link>
         </div>
     );
 

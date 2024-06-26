@@ -11,6 +11,8 @@ import EnterTextComponent from "./redux/component/EnterText"
 import AdaptableCounterComponent from "./redux/component/AdaptableCounter"
 import MovieContextProvider, { movieContext } from "./context/example/MovieContext"
 import { useContext, useState } from "react"
+import ToDoListComponent from "./redux/component/TodoList"
+import User from "./redux/component/User"
 
 function App() {
   // const [pageNo,setPageNo] = useState(7);
@@ -254,6 +256,8 @@ function App() {
             <Route path="/" element={<HomePage/>}/>
             <Route path="/home" element={<HomePage/>}/>
             <Route path="/watchlist" element={<WatchlistPage/>}/>
+            <Route path="/todo" element={<ToDoListComponent/>}/>
+            <Route path="/user" element={<User/>}/>
           </Routes>
 
           
