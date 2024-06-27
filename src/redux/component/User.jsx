@@ -9,7 +9,8 @@ const User =() =>{
         return globalState.userSliceState;
     })
     const dispatch = useDispatch();
-    const {email,firstName,lastName,role,university} = localUserSliceState.user;
+    console.log(localUserSliceState);
+    // const {firstName,lastName,role,university} = localUserSliceState.user;
     console.log(localUserSliceState);
     useEffect(()=>{
         //axiosGetUser();
@@ -22,10 +23,22 @@ const User =() =>{
             I am an User
             <p>status : {localUserSliceState.status}</p>
             <div className="mt-3 border border-2 p-4">
-            <p>User Details : {localUserSliceState.user.email}</p>
-            <p>Full Name : {firstName} {lastName}</p>
+            {
+                localUserSliceState.status === "Success"
+                ?
+                (<div>
+                    <p>User Details : {localUserSliceState.user.email}</p>
+                    <p>Full Name : {localUserSliceState.user.firstName} {localUserSliceState.user.lastName}</p>
+                    <p>Role : {localUserSliceState.user.role}</p>
+                    <p>University : {localUserSliceState.user.university}</p> 
+                </div>)
+                : 
+                (<p>Loading user details ...</p>)
+            }
+            
+            {/* <p>Full Name : {firstName} {lastName}</p>
             <p>Role : {role}</p>
-            <p>University : {university}</p>
+            <p>University : {university}</p> */}
 
             </div>
             

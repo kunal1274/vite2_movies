@@ -28,3 +28,7 @@ Currently, two official plugins are available:
 
 ![alt text](image-1.png)
 
+Vercel Environment variable
+
+![alt text](image-2.png)
+

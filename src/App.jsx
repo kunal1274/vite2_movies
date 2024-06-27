@@ -249,7 +249,7 @@ function App() {
          </MovieContextProvider> */}
           
           <Routes>
-            {/* <Route path="/adaptablecounter" element={<AdaptableCounterComponent/>}/> */}
+            <Route path="/adaptablecounter" element={<AdaptableCounterComponent/>}/>
             {/* <Route path="/entertext" element={<EnterTextComponent/>}/> */}
             {/* <Route path="/counter" element={<CounterWithReduxComponent/>}/> */}
             {/* <Route path="/" element={<AttributesContext/>}/> */}
