@@ -40,6 +40,21 @@ Currently, two official plugins are available:
 - - importing the required repository ( initially it will be tagged to main branch)
 ![alt text](image-4.png)
 
+- - deploy the project ( initially it will be with main)
+
+![alt text](image-5.png)
+
+![alt text](image-6.png)
+
+![alt text](image-7.png)
+
+- Now changing the Branch 
+
+![alt text](image-8.png)
+
+
+
+
 
 
 
