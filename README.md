@@ -40,6 +40,11 @@ Currently, two official plugins are available:
 - - importing the required repository ( initially it will be tagged to main branch)
 ![alt text](image-4.png)
 
+- - validate the url if working fine or not 
+![alt text](image-9.png)
+
+![alt text](image-10.png)
+
 - - deploy the project ( initially it will be with main)
 
 ![alt text](image-5.png)
@@ -52,8 +57,24 @@ Currently, two official plugins are available:
 
 ![alt text](image-8.png)
 
+![alt text](image-11.png)
 
+![alt text](image-12.png)
 
+- Now do the deployment again
+
+![alt text](image-13.png)
+![alt text](image-14.png)
+![alt text](image-15.png)
+![alt text](image-16.png)
+
+- Visit the website now and now the testing can be done in TEST environment
+![alt text](image-17.png)
+![alt text](image-18.png)
+![alt text](image-19.png)
+
+To note that we can't add more than 3 project per git repository in the Vercel . so basically 
+we can think of making it : DEV , TEST and main ( PROD ) over here.
 
 
 
