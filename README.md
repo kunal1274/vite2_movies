@@ -28,7 +28,19 @@ Currently, two official plugins are available:
 
 ![alt text](image-1.png)
 
-Vercel Environment variable
+## Vercel + Vite 
+##### Vercel Environment variable
 
 ![alt text](image-2.png)
+
+### How to configure Vercel
+- Create the project 
+![alt text](image-3.png)
+
+- - importing the required repository ( initially it will be tagged to main branch)
+![alt text](image-4.png)
+
+
+
+
 
