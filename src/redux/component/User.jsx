@@ -9,6 +9,7 @@ const User =() =>{
         return globalState.userSliceState;
     })
     const dispatch = useDispatch();
+    const {email,firstName,lastName,role,university} = localUserSliceState.user;
     console.log(localUserSliceState);
     useEffect(()=>{
         //axiosGetUser();
@@ -20,6 +21,14 @@ const User =() =>{
         <div>
             I am an User
             <p>status : {localUserSliceState.status}</p>
+            <div className="mt-3 border border-2 p-4">
+            <p>User Details : {localUserSliceState.user.email}</p>
+            <p>Full Name : {firstName} {lastName}</p>
+            <p>Role : {role}</p>
+            <p>University : {university}</p>
+
+            </div>
+            
         </div>
     );
 }

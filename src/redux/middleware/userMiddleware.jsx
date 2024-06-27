@@ -31,7 +31,7 @@ export default userMiddleware;
 
 async function axiosFetchUser(userId){
     try {
-        const response = await axios.get(`https://dummyjson.com/usHers/${userId}`)
+        const response = await axios.get(`https://dummyjson.com/users/${userId}`)
         // const resData = await response.json()
         //console.log(response.data["email"])
         return response;
