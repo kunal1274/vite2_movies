@@ -23,3 +23,39 @@ Currently, two official plugins are available:
 
 ![alt text](./readmeImages/image-5.png)
 
+#### how to create new branch direclty from the terminal 
+![alt text](image.png)
+
+![alt text](image-1.png)
+
+## Vercel + Vite 
+##### Vercel Environment variable
+
+![alt text](image-2.png)
+
+### How to configure Vercel
+- Create the project 
+![alt text](image-3.png)
+
+- - importing the required repository ( initially it will be tagged to main branch)
+![alt text](image-4.png)
+
+- - deploy the project ( initially it will be with main)
+
+![alt text](image-5.png)
+
+![alt text](image-6.png)
+
+![alt text](image-7.png)
+
+- Now changing the Branch 
+
+![alt text](image-8.png)
+
+
+
+
+
+
+
+
