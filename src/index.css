@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* index.css */
+.underline-animation {
+    position: relative;
+  }
+  
+  .underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+  }
+  
+  .underline-animation:hover::after {
+    background-color: #E1DDCC; /* Change to your desired underline color */
+  }
+  
+  html {
+    @apply font-sans;
+  }
