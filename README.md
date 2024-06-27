@@ -75,6 +75,23 @@ Currently, two official plugins are available:
 
 To note that we can't add more than 3 project per git repository in the Vercel . so basically 
 we can think of making it : DEV , TEST and main ( PROD ) over here.
+Overview of all deployments is shown in this picture.
+
+![alt text](image-20.png)
+
+- How to Adjust GitHub App Permissions 
+![alt text](image-21.png)
+
+![alt text](image-22.png)
+
+![alt text](image-23.png)
+
+![alt text](image-24.png)
+
+![alt text](image-25.png)
+
+
+
 
 
 
