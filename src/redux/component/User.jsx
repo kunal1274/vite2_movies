@@ -27,6 +27,7 @@ const User =() =>{
                 localUserSliceState.status === "Success"
                 ?
                 (<div>
+                    <p>The below are the user details</p>
                     <p>User Details : {localUserSliceState.user.email}</p>
                     <p>Full Name : {localUserSliceState.user.firstName} {localUserSliceState.user.lastName}</p>
                     <p>Role : {localUserSliceState.user.role}</p>
