@@ -22,7 +22,8 @@ function App() {
   // const [pageNo,setPageNo] = useState(7);
   const designAtomicHabits = false;
   const designBlogPage = false;
-  const fmsKunalV1 = true;
+  const fmsKunalV1 = false;
+  const scalerMovieApp = true;
 
   if (fmsKunalV1){
     return(
@@ -54,8 +55,8 @@ function App() {
   )
   }
 
-  
-  return (
+  if(scalerMovieApp){
+    return (
       <Provider store={reduxStore}>
         <div className="flex flex-col justify-center items-center">
           
@@ -81,6 +82,15 @@ function App() {
           </div>
         </Provider> 
   )
+
+  }
+
+  return (
+    <div>
+      I am just an APP. For different application please check the flags defined at the starting of the function.
+    </div>
+  )
+  
 }
 
 export default App;
