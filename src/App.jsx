@@ -17,6 +17,7 @@ import BlogPage from "./pages/blogPage/blog"
 import AtomicHabitsHomePage from "./pages/atomicHabits/AtomicHabits"
 import ListPage from "./fms/pages/ListPage"
 import NotFound404Page from "./fms/pages/NotFound404"
+import MovieWatchList from "./components/movie/WatchList"
 
 function App() {
   // const [pageNo,setPageNo] = useState(7);
@@ -75,7 +76,7 @@ function App() {
             {/* <Route path="/" element={<AttributesContext/>}/> */}
             <Route path="/" element={<HomePage/>}/>
             <Route path="/home" element={<HomePage/>}/>
-            <Route path="/watchlist" element={<WatchlistPage/>}/>
+            <Route path="/watchlist" element={<MovieWatchList/>}/>
             <Route path="/todo" element={<ToDoListComponent/>}/>
             <Route path="/user" element={<User/>}/>
           </Routes>
