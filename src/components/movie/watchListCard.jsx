@@ -20,7 +20,7 @@ const WatchListCard = forwardRef(function WatchListCardAnonymous(
     //     p("removed",id)
     // }
     return(
-            <tr ref={ref} className={`bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 ${isLatest ? 'bg-blue-100':''}`}>
+            <tr ref={ref} className={`bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 ${isLatest ? 'bg-blue-400':''}`}>
                 <td className="p-4">
                     <img src={movieImage} className="w-16 md:w-32 max-w-full h-24 rounded-lg" alt="Apple Watch"/>
                 </td>
