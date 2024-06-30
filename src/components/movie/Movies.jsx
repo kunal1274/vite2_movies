@@ -4,7 +4,7 @@ import MovieCard from "./MovieCard";
 import PaginationComponent from "../pagination/Pagination";
 import { movieContext } from "../../context/example/MovieContext";
 import ModalComponent from "./Modal";
-import SuccessAlertComponent from "./Alert";
+import SuccessAlertComponent, { WatchlistSuccessAlertComponent } from "./Alert";
 const baseURL = 'https://api.themoviedb.org/3/trending/all/day';
 const apiKey = '759a44a0504a2d2f81971272a953a08d';
 const finalUrl = `${baseURL}?api_key=${apiKey}&language=en-US&page=1`
@@ -32,6 +32,7 @@ function Movies(){
         // watchListValues : JSON.parse(localStorage.getItem('watchList')) || [],
     });
     const [watchListState,setWatchListState] = useState([]); 
+    const [isWatchlistSuccess,setIsWatchlistSuccess] = useState(false);
     
    
 
@@ -64,8 +65,12 @@ function Movies(){
     const addToWL =(newMovieElement) =>{
         const updatedWatchListState = [...watchListState,newMovieElement];
         setWatchListState(updatedWatchListState)
+        setIsWatchlistSuccess(true);
         // p(watchListState)
         localStorage.setItem("watchList",JSON.stringify(updatedWatchListState));
+        setTimeout(() => {
+            setIsWatchlistSuccess(false)
+        }, 15000);
         // p(watchListState.length)
         
     }
@@ -247,6 +252,7 @@ function Movies(){
 
             <ModalComponent localStorageKeys={localStorageState.localStorageKeys} isModalOpen={isModalOpen} handleCloseModal={handleCloseModal} handleYesInModal={handleYesInModal} handleToggleModal={handleToggleModal}/>
             {isSuccess && <SuccessAlertComponent/>}
+            {isWatchlistSuccess && <WatchlistSuccessAlertComponent setIsWatchlistSuccessProp={setIsWatchlistSuccess}/>}
 
             <div className=""
                 style={{
