@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { forwardRef, useEffect, useRef, useState } from "react";
 import WatchListCard from "./watchListCard";
 import p from "../../utility/p";
 import { FaReact } from "react-icons/fa";
@@ -9,7 +9,8 @@ function MovieWatchList(){
 
     const [watchListData,setWatchListData] = useState([]);
     const [isLoading,setIsLoading] = useState(true);
-    const [isError,setIsError] = useState(false)
+    const [isError,setIsError] = useState(false);
+    const newItemRef = useRef(null);
 
     useEffect(()=>{
         try {
@@ -28,6 +29,20 @@ function MovieWatchList(){
         }
     },
     [])
+
+    useEffect(()=>{
+        // p("inside use Effect",newItemRef)
+        if (newItemRef.current) {
+            newItemRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    },[watchListData])
+
+    const handleRemoveWatchlist = (id) =>{
+        // p("removed from Watchlist component",id)
+        const updatedWatchListData = watchListData.filter((element)=>(element.id !== id))
+        localStorage.setItem("watchList",JSON.stringify(updatedWatchListData))
+        setWatchListData(updatedWatchListData);
+    }
     if(isLoading){
         return(
             <div>Loading data from local storage...</div>
@@ -72,20 +87,25 @@ function MovieWatchList(){
                                 
                                 (watchListData.length > 0 )
                                     ?
-                                    watchListData.map((elementWatchList)=>{
-                                        p(elementWatchList)
+                                    watchListData.map((elementWatchList,index)=>{
+                                        // p(elementWatchList)
                                         const movieImage = `${baseImageUrl}${elementWatchList.backdrop_path}`;
                                         const movieName = elementWatchList.name ?? elementWatchList.title;
                                         const movieRatings = elementWatchList.vote_average;
                                         const moviePopularity = elementWatchList.popularity;
                                         const movieGenre = elementWatchList.genre_ids[0]
+                                        //p("new Item Ref in watchList",newItemRef)
                                         return(
                                             <WatchListCard key={elementWatchList.id}
+                                            ref={index === watchListData.length -1 ? newItemRef : null}
+                                            handleRemoveWatchlistProp={handleRemoveWatchlist}
+                                            movieWatchListObj={elementWatchList}
                                             movieImage={movieImage}
                                             movieName={movieName}
                                             movieRatings={movieRatings}
                                             moviePopularity ={moviePopularity}
                                             movieGenre={movieGenre}
+                                            isLatest={index === watchListData.length - 1}
                                             />
                                         );
                                     })
