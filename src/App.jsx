@@ -29,6 +29,9 @@ import Q2_2 from "./scaler/localStorage/Q2_2"
 import Q2_3 from "./scaler/localStorage/Q2_3/Q2_3"
 import DashboardPageV1 from "./fms/pages/DashboardPageV1"
 import Appy from "./scaler/contest/Q2"
+import BSTVisualization from "./_1pyreact/components/trees/BSTVisualization"
+import PyodideExample from "./_1pyreact/components/pyCode/PythonExample"
+import PyodideComponent from "./_1pyreact/components/pyCode/PyodideComponent"
 // import Q1 from "./scaler/localStorage/Q1"
 
 
@@ -43,6 +46,9 @@ function App() {
   if (fmsKunalV1){
     return(
       <Routes>
+        <Route path="/py2" element={<PyodideComponent/>}/>
+        <Route path="/py1" element={<PyodideExample/>}/>
+        <Route path="/bstvisuals" element={<BSTVisualization/>}/>
         <Route path="/cq2" element={<Appy/>}/>
         {/* <Route path="/scaler/:q2_3" element={<Q2_3/>}/>
         <Route path="/scaler/:q2_2" element={<Q2_2/>}/>
