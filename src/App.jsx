@@ -42,8 +42,18 @@ function App() {
   // const [pageNo,setPageNo] = useState(7);
   const designAtomicHabits = false;
   const designBlogPage = false;
-  const fmsKunalV1 = true;
+  const fmsKunalV1 = false;
   const scalerMovieApp = false;
+  const bookMyShow_1 = true;
+
+  if (bookMyShow_1) {
+    return (
+      <Routes>
+        <Route path="/py" element={<PyodideComponent />} />
+        <Route path="*" element={<NotFound404Page />} />
+      </Routes>
+    );
+  }
 
   if (fmsKunalV1) {
     return (
